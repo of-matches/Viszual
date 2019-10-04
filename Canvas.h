@@ -1,9 +1,8 @@
 #ifndef Canvas_H
 #define Canvas_H
 
-#include <GL/freeglut.h>
 #include <windows.h>
-#include <gl/GL.h>
+#include "Cube.h"
 
 using namespace std;
 

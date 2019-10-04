@@ -12,7 +12,7 @@
       "label": "Build",
       "type": "shell",
       "command": "g++.exe",
-      "args": ["-o", "Viszuals.exe", "*.o", "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"", "-lfreeglut", "-lglu32", "-lopengl32", "-Wl,--subsystem,windows"],
+      "args": ["-o", "./win64/Viszuals", "*.o", "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"", "-lfreeglut", "-lglu32", "-lopengl32", "-Wl,--subsystem,windows"],
       "group": {
         "kind": "build",
         "isDefault": true

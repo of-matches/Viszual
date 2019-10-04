@@ -1,27 +1,13 @@
 #include "Canvas.h"
 
-void renderScene(){	//Zeichenfunktion	// Hier befindet sich der Code der in jedem Frame ausgefuehrt werden muss
+void renderScene(){	// Hier befindet sich der Code der in jedem Frame ausgefuehrt werden muss
 	glLoadIdentity ();   // Aktuelle Model-/View-Transformations-Matrix zuruecksetzen
-	glClearColor(1, 0.5, 0, 0);
+	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	gluLookAt(0, 3, 5, 0, 0, 0, 0, 1, 0);
+	gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
 
-	glPushMatrix();
-		glTranslatef(0, 0.3, 0.51);
-
-		glPushMatrix();
-			glTranslatef(0.2, 0, 0);
-		glPopMatrix();
-
-		glPushMatrix();
-			glTranslatef(-0.2, 0, 0);
-		glPopMatrix();
-	glPopMatrix();
-
-	glPushMatrix();
-		glScalef(1, 0.2, 1);
-	glPopMatrix();
+	cube(1, 1, 1, 1);
 
 	glutSwapBuffers();
 }
@@ -44,19 +30,18 @@ void animate(int value){	// Hier werden Berechnungen durchgef�hrt, die zu eine
 
 	glutPostRedisplay();	// RenderScene aufrufen
 	
-	int wait_msec = 10;	// Timer wieder registrieren - Animate wird so nach 10 msec mit value+=1 aufgerufen.
+	int wait_msec = 10;	// Timer wieder registrieren - animate() wird nach 10 msec mit value+=1 aufgerufen.
 	glutTimerFunc(wait_msec, animate, ++value);
 }
 
 Canvas::Canvas(int argc, char **argv){
-    glutInit(&argc, argv);                // GLUT initialisieren
+    glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(400, 400);         // Fenster-Konfiguration
 	glutCreateWindow("Canvas");   // Fenster-Erzeugung
 	glutDisplayFunc( renderScene );         // Zeichenfunktion bekannt machen
 	glutReshapeFunc( reshape );
-	// TimerCallback registrieren; wird nach 10 msec aufgerufen mit Parameter 0  
-	glutTimerFunc( 10, animate, 0);
+	glutTimerFunc( 10, animate, 0); // TimerCallback registrieren; nach 10 msec aufgerufen mit Parameter 0
 	init();
 	glutMainLoop();
 }
