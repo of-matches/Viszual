@@ -1,15 +1,24 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "build Canvas.exe",
-        "type": "shell",
-        "command": "g++.exe",
-        "args": ["*.cpp", "-o", "Canvas"],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        }
-      }
-    ]
-  }
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile",
+      "type": "shell",
+      "command": "g++.exe",
+      "args": ["-c", "*.cpp", "-L\"C:/dev/freeglut-mingw-3.0.0/include\""],
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "g++.exe",
+      "args": ["-o", "Viszuals.exe", "*.o", "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"", "-lfreeglut", "-lglu32", "-lopengl32", "-Wl,--subsystem,windows"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "dependsOn": ["Compile"]
+    }
+  ]
+}
