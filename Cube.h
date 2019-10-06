@@ -1,8 +1,18 @@
 #ifndef Cube_H
 #define Cube_H
 
-#include <GL/freeglut.h>
+#include "Position.h"
+#include "Color.h"
 
-void cube(float diameter, float red, float green, float blue);
+class Cube{
+    public:  
+        Cube(const float diameter, const Color color);
+        void draw();
+
+    private:
+        float diameter;
+        Color color;
+        Position position;
+};
 
 #endif

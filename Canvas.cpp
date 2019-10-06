@@ -20,10 +20,14 @@ void reshape(int width, int height){
 }
 
 Canvas::Canvas(int argc, char **argv){
+	windowSize = 400;
+
+	timeUntilNextTick = 20;	//in ms
+
     glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 
-	glutInitWindowSize(400, 400);
+	glutInitWindowSize(windowSize, windowSize);
 	glutCreateWindow("Canvas");
 	glutReshapeFunc(reshape);
 	glutDisplayFunc(updateDisplay);
@@ -33,6 +37,6 @@ Canvas::Canvas(int argc, char **argv){
 	glEnable(GL_DEPTH_TEST);
 	glClearDepth(1.0);
 
+	scene = new Scene();
 	glutMainLoop();
-	Scene();
 }

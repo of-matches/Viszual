@@ -8,6 +8,7 @@ class Canvas{
         Canvas(int argc, char **argv);
     
     private:
+        unsigned short windowSize;
         void init();
 };
 
