@@ -1,24 +1,59 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Compile",
-      "type": "shell",
-      "command": "g++.exe",
-      "args": ["-c", "*.cpp", "-L\"C:/dev/freeglut-mingw-3.0.0/include\""],
-      "problemMatcher": ["$gcc"]
-    },
-    {
-      "label": "Build",
-      "type": "shell",
-      "command": "g++.exe",
-      "args": ["-o", "./win64/Viszuals", "*.o", "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"", "-lfreeglut", "-lglu32", "-lopengl32", "-Wl,--subsystem,windows"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "problemMatcher": ["$gcc"],
-      "dependsOn": ["Compile"]
-    }
-  ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile",
+            "type": "shell",
+            "command": "g++.exe",
+            "args": [
+                "-g",
+                "-c",
+                "*.cpp",
+                "-L\"C:/dev/freeglut-mingw-3.0.0/include\""
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "g++.exe",
+            "args": [
+                "-g",
+                "-o",
+                "./win64/Viszuals",
+                "*.o",
+                "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"",
+                "-lfreeglut",
+                "-lglu32",
+                "-lopengl32",
+                "-Wl,--subsystem,windows"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "dependsOn": [
+                "Compile"
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "g++.exe build active file",
+            "command": "C:/dev/msys64/mingw64/bin/g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/dev/msys64/mingw64/bin"
+            }
+        }
+    ]
 }

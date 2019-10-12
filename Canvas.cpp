@@ -5,6 +5,7 @@ Scene* scene;
 
 void incrementTick(int value){
 	scene->render();
+	glutTimerFunc(timeUntilNextTick, incrementTick, ++value);
 }
 
 void updateDisplay(){
@@ -22,7 +23,7 @@ void reshape(int width, int height){
 Canvas::Canvas(int argc, char **argv){
 	windowSize = 400;
 
-	timeUntilNextTick = 20;	//in ms
+	timeUntilNextTick = 1;	//in ms
 
     glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);

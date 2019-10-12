@@ -7,6 +7,8 @@ Cube::Cube(const float diameter, const Color color){
 }
 
 void Cube::draw(){
+	glColor4f(color.r, color.g, color.b, color.a);
+
 	glBegin(GL_POLYGON);   //Vorderseite
 	glVertex3f(-diameter / 2.0f, -diameter / 2.0f, +diameter / 2.0f);
 	glVertex3f(+diameter / 2.0f, -diameter / 2.0f, +diameter / 2.0f);
@@ -48,6 +50,4 @@ void Cube::draw(){
 	glVertex3f(+diameter / 2.0f, -diameter / 2.0f, +diameter / 2.0f);
 	glVertex3f(-diameter / 2.0f, -diameter / 2.0f, +diameter / 2.0f);
 	glEnd();
-
-	glColor4f(color.r, color.g, color.b, color.a);
 }

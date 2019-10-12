@@ -20,6 +20,6 @@ void Scene::render(){
 
 void Scene::createCubes(const int number){
     for (short i = 0; i < number; i++){
-        cubes.emplace_back(1, Color(0, 0, 0, 1));
+        cubes.emplace_back(1, Color(1, 1, 1, 0));
     }
 }
