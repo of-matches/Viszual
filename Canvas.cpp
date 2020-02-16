@@ -25,7 +25,7 @@ Canvas::Canvas(int argc, char **argv){
 	timeUntilNextTick = 1;	//in ms
 
     glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_ALPHA);
 
 	glutInitWindowSize(windowSize, windowSize);
 	glutCreateWindow("Canvas");
