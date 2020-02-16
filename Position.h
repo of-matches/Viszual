@@ -5,12 +5,11 @@
 
 struct Position{
     Position();
-    Position(const float value);
-    Position(const float x, const float y, const float z);
+    Position(const GLfloat x, const GLfloat y, const GLfloat z);
 
-    float x;
-    float y;
-    float z;
+    GLfloat x;
+    GLfloat y;
+    GLfloat z;
 };
 
 #endif

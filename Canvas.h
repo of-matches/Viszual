@@ -9,6 +9,7 @@ class Canvas{
     
     private:
         unsigned short windowSize;
+
         void init();
 };
 

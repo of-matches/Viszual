@@ -11,6 +11,7 @@ class Scene{
         Scene();
 
         void render();
+        void animate();
         void createCubes(const int number);
 
     private:
