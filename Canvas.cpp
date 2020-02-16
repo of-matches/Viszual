@@ -1,6 +1,7 @@
 #include "Canvas.h"
 
-short timeUntilNextTick;
+unsigned short timeUntilNextTick;
+unsigned short windowSize;
 Scene* scene;
 
 void incrementTick(int value){
