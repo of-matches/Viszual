@@ -27,8 +27,8 @@
                 "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"",
                 "-lfreeglut",
                 "-lglu32",
-                "-lopengl32",
-                "-Wl,--subsystem,windows"
+                "-lopengl32"
+                //"-W1,--subsystem,windows"
             ],
             "group": {
                 "kind": "build",
