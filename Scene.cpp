@@ -1,7 +1,7 @@
 #include "Scene.h"
 
 Scene::Scene() {
-    createCubes(4);
+    createCubes(2);
 }
 
 void Scene::render() {
@@ -11,9 +11,10 @@ void Scene::render() {
         cube = cubes.at(i);
         rotationAxis = cube.getRotationAxis();
 
+        glPushMatrix();
         glRotatef(cube.getRotation(), rotationAxis.x, rotationAxis.y, rotationAxis.z);
-
         cubes.at(i).draw();
+        glPopMatrix();
     }
 }
 
@@ -25,6 +26,6 @@ void Scene::animate() {
 
 void Scene::createCubes(const int number) {
     for (short i = 0; i < number; i++){
-        cubes.emplace_back(4, Color(1, 1, 1, 0), Axis(1, 1, (i/2)));
+        cubes.emplace_back(i +1, Color(1, 1, 1, 0), Axis(1, 0.5, (i +1)));
     }
 }

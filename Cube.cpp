@@ -4,7 +4,7 @@ Cube::Cube(GLfloat size, Color color, Axis rotationAxis): size(size), color(colo
 
 void Cube::draw(){
 	glColor4f(color.r, color.g, color.b, color.a);
-	glutSolidCube(size);
+	glutWireCube(size);
 }
 
 Axis Cube::getRotationAxis(){

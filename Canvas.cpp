@@ -23,7 +23,7 @@ void reshape(int width, int height){
 	glMatrixMode(GL_PROJECTION);// Matrix für Transformation: Frustum->viewport
 	glLoadIdentity();// Aktuelle Transformations-Matrix zuruecksetzen
 	glViewport(0, 0, width, height);// Viewport definieren
-	gluPerspective(90, 1, 0.1, 16);// Frustum definieren
+	gluPerspective(90, width/height, 0.1, 16);// Frustum definieren
 	glMatrixMode(GL_MODELVIEW);// Matrix für Modellierung/Viewing
 }
 
