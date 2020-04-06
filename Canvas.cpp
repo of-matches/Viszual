@@ -29,7 +29,7 @@ void reshape(int width, int height){
 
 Canvas::Canvas(int argc, char **argv){
 	windowSize = 512;
-	timeUntilNextTick = 10;	//in ms
+	timeUntilNextTick = 1;	//in ms
 
     glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_ALPHA);

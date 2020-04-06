@@ -4,7 +4,14 @@
             "name": "Win64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:\\dev\\msys64\\mingw64\\include"
+                "C:/msys64/mingw64/include/**",
+                "C:/msys64/mingw64/include/gtk-3.0",
+                "C:/msys64/mingw64/include/glib-2.0",
+                "C:/msys64/mingw64/include/pango-1.0",
+                "C:/msys64/mingw64/include/cairo",
+                "C:/msys64/mingw64/include/gdk-pixbuf-2.0",
+                "C:/msys64/mingw64/include/atk-1.0",
+                "C:/msys64/mingw64/lib/glib-2.0/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -12,7 +19,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "C:/dev/msys64/mingw64/bin/g++.exe",
+            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
             "cStandard": "c11",
             "cppStandard": "c++20",
             "intelliSenseMode": "gcc-x64"

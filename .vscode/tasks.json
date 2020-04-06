@@ -6,10 +6,10 @@
             "type": "shell",
             "command": "g++.exe",
             "args": [
-                "-g",
                 "-c",
                 "*.cpp",
-                "-L\"C:/dev/freeglut-mingw-3.0.0/include\""
+                "-L\"C:/dev/freeglut-mingw-3.0.0/include\"",
+                "`pkg-config --cflags gtk+-3.0`"
             ],
             "problemMatcher": [
                 "$gcc"
@@ -20,15 +20,14 @@
             "type": "shell",
             "command": "g++.exe",
             "args": [
-                "-g",
                 "-o",
                 "./win64/Viszuals",
                 "*.o",
                 "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"",
                 "-lfreeglut",
                 "-lglu32",
-                "-lopengl32"
-                //"-W1,--subsystem,windows"
+                "-lopengl32",
+                "`pkg-config --libs gtk+-3.0`"
             ],
             "group": {
                 "kind": "build",
@@ -42,18 +41,29 @@
             ]
         },
         {
+            "label": "Make",
             "type": "shell",
-            "label": "g++.exe build active file",
-            "command": "C:/dev/msys64/mingw64/bin/g++.exe",
+            "command": "g++.exe",
             "args": [
                 "-g",
-                "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "./win64/Viszuals",
+                "*.o",
+                "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"",
+                "-lfreeglut",
+                "-lglu32",
+                "-lopengl32"
             ],
-            "options": {
-                "cwd": "C:/dev/msys64/mingw64/bin"
-            }
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "dependsOn": [
+                "Compile"
+            ]
         }
     ]
 }
