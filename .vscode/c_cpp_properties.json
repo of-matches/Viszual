@@ -1,29 +1,27 @@
 {
-    "configurations": [
-        {
-            "name": "Win64",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "C:/msys64/mingw64/include/**",
-                "C:/msys64/mingw64/include/gtk-3.0",
-                "C:/msys64/mingw64/include/glib-2.0",
-                "C:/msys64/mingw64/include/pango-1.0",
-                "C:/msys64/mingw64/include/cairo",
-                "C:/msys64/mingw64/include/gdk-pixbuf-2.0",
-                "C:/msys64/mingw64/include/atk-1.0",
-                "C:/msys64/mingw64/lib/glib-2.0/include"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
-            "cStandard": "c11",
-            "cppStandard": "c++20",
-            "intelliSenseMode": "gcc-x64"
-        }
-    ],
+    "configurations": [{
+        "name": "Win64",
+        "includePath": [
+            "${workspaceFolder}/**",
+            "C:/msys64/mingw64/include/**",
+            "C:/msys64/mingw64/lib/glib-2.0/include",
+            "C:/msys64/mingw64/lib/glibmm-2.4/include",
+            "C:/msys64/mingw64/lib/sigc++-2.0/include",
+            "C:/msys64/mingw64/lib/giomm-2.4/include",
+            "C:/msys64/mingw64/lib/gdkmm-3.0/include",
+            "C:/msys64/mingw64/lib/pangomm-1.4/include",
+            "C:/msys64/mingw64/lib/gtkmm-3.0/include"
+        ],
+        "defines": [
+            "_DEBUG",
+            "UNICODE",
+            "_UNICODE"
+        ],
+        "windowsSdkVersion": "10.0.17763.0",
+        "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
+        "cStandard": "c11",
+        "cppStandard": "c++20",
+        "intelliSenseMode": "gcc-x64"
+    }],
     "version": 4
 }

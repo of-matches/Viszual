@@ -7,7 +7,7 @@ Scene::Scene() {
 void Scene::render() {
     Cube cube;
     Axis rotationAxis;
-    for(int i = 0; i < cubes.size(); i++) {
+    for(unsigned int i = 0; i < cubes.size(); i++) {
         cube = cubes.at(i);
         rotationAxis = cube.getRotationAxis();
 
@@ -19,13 +19,13 @@ void Scene::render() {
 }
 
 void Scene::animate() {
-    for(int i = 0; i < cubes.size(); i++) {
+    for(unsigned int i = 0; i < cubes.size(); i++) {
         cubes.at(i).incrementRotation(1);
     }
 }
 
 void Scene::createCubes(const int number) {
-    for (short i = 0; i < number; i++){
+    for (unsigned short i = 0; i < number; i++){
         cubes.emplace_back(i +1, Color(1, 1, 1, 0), Axis(1, 0.5, (i +1)));
     }
 }

@@ -1,29 +1,21 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "g++.exe build and debug active file",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/win64/Viszuals.exe",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "C:\\Users\\lschr\\Documents\\git projects\\Viszuals",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "miDebuggerPath": "c:\\dev\\msys64\\usr\\bin\\gdb.exe",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            //"preLaunchTask": "Build"
-        }
-    ]
+    "configurations": [{
+        "name": "g++.exe build and debug active file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/win64/Viszuals.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "C:\\Users\\lschr\\Documents\\git projects\\Viszuals",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "c:\\dev\\msys64\\usr\\bin\\gdb.exe",
+        "setupCommands": [{
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+        }],
+    }]
 }

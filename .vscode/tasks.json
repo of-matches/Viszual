@@ -2,68 +2,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile",
+            "label": "StartBash",
             "type": "shell",
-            "command": "g++.exe",
-            "args": [
-                "-c",
-                "*.cpp",
-                "-L\"C:/dev/freeglut-mingw-3.0.0/include\"",
-                "`pkg-config --cflags gtk+-3.0`"
-            ],
-            "problemMatcher": [
-                "$gcc"
-            ]
+            "command": "bash",
         },
         {
-            "label": "Build",
+            "label": "setupMakeEnvironment",
             "type": "shell",
-            "command": "g++.exe",
-            "args": [
-                "-o",
-                "./win64/Viszuals",
-                "*.o",
-                "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"",
-                "-lfreeglut",
-                "-lglu32",
-                "-lopengl32",
-                "`pkg-config --libs gtk+-3.0`"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "dependsOn": [
-                "Compile"
-            ]
-        },
-        {
-            "label": "Make",
-            "type": "shell",
-            "command": "g++.exe",
-            "args": [
-                "-g",
-                "-o",
-                "./win64/Viszuals",
-                "*.o",
-                "-L\"C:/dev/freeglut-mingw-3.0.0/lib/x64\"",
-                "-lfreeglut",
-                "-lglu32",
-                "-lopengl32"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "dependsOn": [
-                "Compile"
-            ]
+            "command": "export",
+            "args": ["PKG_CONFIG_PATH=/mingw64/lib/pkgconfig"],
+            "dependsOn": ["StartBash"]
         }
     ]
 }

@@ -27,7 +27,7 @@ void reshape(int width, int height){
 	glMatrixMode(GL_MODELVIEW);// Matrix für Modellierung/Viewing
 }
 
-Canvas::Canvas(int argc, char **argv){
+Canvas::Canvas(int argc, char** argv){
 	windowSize = 512;
 	timeUntilNextTick = 1;	//in ms
 
