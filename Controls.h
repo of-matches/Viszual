@@ -1,11 +1,19 @@
 #ifndef Controls_H
 #define Controls_H
 
-#include <gtkmm-3.0/gtkmm.h>
+#include "Canvas.h"
+#include <gtkmm.h>
 
-class Controls{
+class Controls : public Gtk::Window {
     public:
-        Controls();
+        Controls(Canvas* canvas);
+
+    private:
+        Canvas canvas;
+        Gtk::Button buttonHide;
+
+        void buttonHideClicked();
+
 };
 
 #endif

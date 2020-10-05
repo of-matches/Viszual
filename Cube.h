@@ -8,7 +8,7 @@
 class Cube{
     public:
         Cube();
-        Cube(const GLfloat size, const Color color, const Axis rotationAxis);
+        Cube(const GLfloat size, const Axis rotationAxis, const Color color);
 
         void draw();
         void incrementRotation(const unsigned short angle);
@@ -17,10 +17,11 @@ class Cube{
 
     private:
         GLfloat size;
-        GLfloat rotation;
         Axis rotationAxis;
         Color color;
+        GLfloat rotation;
         Position position;
+
 };
 
 #endif

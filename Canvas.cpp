@@ -29,9 +29,11 @@ Canvas::Canvas(int argc, char** argv){
 	windowSize = 512;
 	timeUntilNextTick = 1;	//in ms
 	scene = new Scene();
-	std::thread canvasThread(Canvas::init, this, argc, argv);
+	std::thread canvasThread(&Canvas::init, this, argc, argv);
     canvasThread.detach();
 }
+
+Canvas::Canvas(){}
 
 void Canvas::init(int argc, char** argv){
 	glutInit(&argc, argv);

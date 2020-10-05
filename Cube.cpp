@@ -1,6 +1,6 @@
 #include "Cube.h"
 Cube::Cube() {}
-Cube::Cube(GLfloat size, Color color, Axis rotationAxis): size(size), color(color), rotationAxis(rotationAxis), position(Position(0, 0, 0)), rotation(0) {}
+Cube::Cube(GLfloat size, Axis rotationAxis, Color color): size(size), rotationAxis(rotationAxis), color(color), rotation(0), position(Position(0, 0, 0)) {}
 
 void Cube::draw(){
 	glColor4f(color.r, color.g, color.b, color.a);

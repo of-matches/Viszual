@@ -6,6 +6,7 @@
 
 class Canvas{
     public:
+        Canvas();
         Canvas(int argc, char **argv);
         
     private:

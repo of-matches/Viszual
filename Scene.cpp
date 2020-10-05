@@ -26,6 +26,6 @@ void Scene::animate() {
 
 void Scene::createCubes(const int number) {
     for (unsigned short i = 0; i < number; i++){
-        cubes.emplace_back(i +1, Color(1, 1, 1, 0), Axis(1, 0.5, (i +1)));
+        cubes.emplace_back(i +1, Axis(1, 0.5, (i +1)), Color(1, 1, 1, 0));
     }
 }
