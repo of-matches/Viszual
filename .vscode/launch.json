@@ -2,21 +2,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-        "name": "g++.exe build and debug active file",
-        "type": "cppdbg",
-        "request": "launch",
-        "program": "${workspaceFolder}/win64/Viszuals.exe",
-        "args": [],
-        "stopAtEntry": false,
-        "cwd": "C:\\Users\\lschr\\Documents\\git projects\\Viszuals",
-        "environment": [],
-        "externalConsole": false,
-        "MIMode": "gdb",
-        "miDebuggerPath": "c:\\dev\\msys64\\usr\\bin\\gdb.exe",
-        "setupCommands": [{
-            "description": "Enable pretty-printing for gdb",
-            "text": "-enable-pretty-printing",
-            "ignoreFailures": true
-        }],
-    }]
+            "name": "g++ - Projekt erstellen und debuggen",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/linux/Viszual",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Automatische Strukturierung und Einrückung für \"gdb\" aktivieren",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build project",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
 }

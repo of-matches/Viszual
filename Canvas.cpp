@@ -1,20 +1,20 @@
 #include "Canvas.h"
 
-unsigned short timeUntilNextTick;
-Scene* scene;
+unsigned short minMillisecondsBetweenRenders;
+Canvas* mainCanvas;
 
 void updateDisplay(){
 	glLoadIdentity();  // Aktuelle Model-/View-Transformations-Matrix zuruecksetzen
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
-	scene->render();
+	mainCanvas->render();
 	glutSwapBuffers();
 }
 
 void incrementTick(int value){
-	scene->animate();
+	mainCanvas->animate();
 	updateDisplay();
-	glutTimerFunc(timeUntilNextTick, incrementTick, ++value);
+	glutTimerFunc(minMillisecondsBetweenRenders, incrementTick, ++value);
 }
 
 void reshape(const int width, const int height){
@@ -25,15 +25,19 @@ void reshape(const int width, const int height){
 	glMatrixMode(GL_MODELVIEW);// Matrix für Modellierung/Viewing
 }
 
+Canvas::Canvas(){}
+
 Canvas::Canvas(int argc, char** argv){
 	windowSize = 512;
-	timeUntilNextTick = 1;	//in ms
-	scene = new Scene();
+	minMillisecondsBetweenRenders = 1;	//in ms
+	
+	for(unsigned short i = 0; i < 2; i++){
+		sceneList.emplace_front();
+	}
+
 	std::thread canvasThread(&Canvas::init, this, argc, argv);
     canvasThread.detach();
 }
-
-Canvas::Canvas(){}
 
 void Canvas::init(int argc, char** argv){
 	glutInit(&argc, argv);
@@ -42,8 +46,21 @@ void Canvas::init(int argc, char** argv){
 	glutCreateWindow("Canvas");
 	glutReshapeFunc(reshape);
 	glutDisplayFunc(updateDisplay);
-	glutTimerFunc(timeUntilNextTick, incrementTick, 0);
+	glutTimerFunc(minMillisecondsBetweenRenders, incrementTick, 0);
 	glEnable(GL_DEPTH_TEST);
 	glClearDepth(1.0);
 	glutMainLoop();
+}
+
+void Canvas::render() {
+	for(std::forward_list<Scene>::const_iterator i = sceneList.cbegin(); i == sceneList.cend(); i++){
+		i->render();
+		printf("rendering: &i", i);
+	}
+}
+
+void Canvas::animate() {
+	for(std::forward_list<Scene>::iterator i = sceneList.begin(); i == sceneList.end(); i++){
+		i->animate();
+	}
 }

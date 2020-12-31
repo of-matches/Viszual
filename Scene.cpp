@@ -4,9 +4,10 @@ Scene::Scene() {
     createCubes(2);
 }
 
-void Scene::render() {
+void Scene::render() const{
     Cube cube;
     Axis rotationAxis;
+
     for(unsigned int i = 0; i < cubes.size(); i++) {
         cube = cubes.at(i);
         rotationAxis = cube.getRotationAxis();

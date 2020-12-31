@@ -10,7 +10,7 @@ class Cube{
         Cube();
         Cube(const GLfloat size, const Axis rotationAxis, const Color color);
 
-        void draw();
+        void draw() const;
         void incrementRotation(const unsigned short angle);
         GLfloat getRotation();
         Axis getRotationAxis();

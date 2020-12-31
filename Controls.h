@@ -2,7 +2,8 @@
 #define Controls_H
 
 #include "Canvas.h"
-#include <gtkmm.h>
+#include <gtkmm/window.h>
+#include <gtkmm/togglebutton.h>
 
 class Controls : public Gtk::Window {
     public:
@@ -10,9 +11,9 @@ class Controls : public Gtk::Window {
 
     private:
         Canvas canvas;
-        Gtk::Button buttonHide;
+        Gtk::ToggleButton togglebuttonHide;
 
-        void buttonHideClicked();
+        void togglebuttonHideClicked();
 
 };
 

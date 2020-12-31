@@ -10,7 +10,7 @@ class Scene{
     public:
         Scene();
 
-        void render();
+        void render() const;
         void animate();
         void createCubes(const int number);
 

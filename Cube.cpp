@@ -2,7 +2,7 @@
 Cube::Cube() {}
 Cube::Cube(GLfloat size, Axis rotationAxis, Color color): size(size), rotationAxis(rotationAxis), color(color), rotation(0), position(Position(0, 0, 0)) {}
 
-void Cube::draw(){
+void Cube::draw() const {
 	glColor4f(color.r, color.g, color.b, color.a);
 	glutWireCube(size);
 }
