@@ -1,7 +1,10 @@
 #include "Scene.h"
+#include <stdio.h>
 
-Scene::Scene() {
-    createCubes(2);
+Scene::Scene() {}
+
+Scene::Scene(const unsigned int numberOfCubes) {
+    createCubes(numberOfCubes);
 }
 
 void Scene::render() const{
@@ -27,6 +30,7 @@ void Scene::animate() {
 
 void Scene::createCubes(const int number) {
     for (unsigned short i = 0; i < number; i++){
+        printf("create cubes \n");
         cubes.emplace_back(i +1, Axis(1, 0.5, (i +1)), Color(1, 1, 1, 0));
     }
 }

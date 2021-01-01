@@ -32,7 +32,7 @@ Canvas::Canvas(int argc, char** argv){
 	minMillisecondsBetweenRenders = 1;	//in ms
 	
 	for(unsigned short i = 0; i < 2; i++){
-		sceneList.emplace_front();
+		sceneList.emplace_front(Scene(3));
 	}
 
 	std::thread canvasThread(&Canvas::init, this, argc, argv);
@@ -53,14 +53,13 @@ void Canvas::init(int argc, char** argv){
 }
 
 void Canvas::render() {
-	for(std::forward_list<Scene>::const_iterator i = sceneList.cbegin(); i == sceneList.cend(); i++){
+	for(std::forward_list<Scene>::const_iterator i = sceneList.cbegin(); i != sceneList.cend(); i++) {
 		i->render();
-		printf("rendering: &i", i);
 	}
 }
 
 void Canvas::animate() {
-	for(std::forward_list<Scene>::iterator i = sceneList.begin(); i == sceneList.end(); i++){
+	for(std::forward_list<Scene>::iterator i = sceneList.begin(); i != sceneList.end(); i++){
 		i->animate();
 	}
 }
