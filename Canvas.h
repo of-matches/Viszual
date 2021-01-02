@@ -14,6 +14,7 @@ class Canvas{
 
         void render();
         void animate();
+        void addScene();
         
     private:
         unsigned short windowSize;

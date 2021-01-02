@@ -1,16 +1,13 @@
 #include "Controls.h"
 
-Controls::Controls(Canvas* canvas) : togglebuttonHide("Hide") {
+Controls::Controls(Canvas* canvas) : canvas(canvas), buttonAddScene("Add Scene"){
     set_border_width(8);
 
-    togglebuttonHide.signal_clicked().connect(sigc::mem_fun(*this, &Controls::togglebuttonHideClicked));
-    add(togglebuttonHide);
-    togglebuttonHide.show();
+    buttonAddScene.signal_clicked().connect(sigc::mem_fun(*this, &Controls::buttonAddSceneClicked));
+    add(buttonAddScene);
+    buttonAddScene.show();
 }
 
-void Controls::togglebuttonHideClicked() {
-  	if(togglebuttonHide.get_active() == true) {
-  	} else {
-
-  	}
+void Controls::buttonAddSceneClicked() {
+    canvas->addScene();
 }

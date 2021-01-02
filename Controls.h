@@ -3,17 +3,17 @@
 
 #include "Canvas.h"
 #include <gtkmm/window.h>
-#include <gtkmm/togglebutton.h>
+#include <gtkmm/button.h>
 
 class Controls : public Gtk::Window {
     public:
         Controls(Canvas* canvas);
 
     private:
-        Canvas canvas;
-        Gtk::ToggleButton togglebuttonHide;
+        Canvas* canvas;
+        Gtk::Button buttonAddScene;
 
-        void togglebuttonHideClicked();
+        void buttonAddSceneClicked();
 
 };
 

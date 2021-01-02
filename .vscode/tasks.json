@@ -2,26 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "win64 StartBash",
             "type": "shell",
-            "command": "bash"
-        },
-        {
-            "label": "win64 setupMakeEnvironment",
-            "type": "shell",
-            "command": "export",
-            "args": [
-                "PKG_CONFIG_PATH=/mingw64/lib/pkgconfig"
-            ],
-            "dependsOn": [
-                "StartBash"
-            ]
-        },
-        {
             "label": "build project",
-            "type": "shell",
             "command": "make",
-            "problemMatcher": [],
             "group": {
                 "kind": "build",
                 "isDefault": true

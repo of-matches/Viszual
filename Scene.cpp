@@ -1,10 +1,8 @@
 #include "Scene.h"
 #include <stdio.h>
 
-Scene::Scene() {}
-
-Scene::Scene(const unsigned int numberOfCubes) {
-    createCubes(numberOfCubes);
+Scene::Scene() {
+    createCubes(2);
 }
 
 void Scene::render() const{

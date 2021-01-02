@@ -1,31 +1,6 @@
 {
     "configurations": [
         {
-            "name": "Win64",
-            "includePath": [
-                "${workspaceFolder}/**",
-                "C:/msys64/mingw64/include/**",
-                "C:/msys64/mingw64/lib/glib-2.0/include",
-                "C:/msys64/mingw64/lib/glibmm-2.4/include",
-                "C:/msys64/mingw64/lib/sigc++-2.0/include",
-                "C:/msys64/mingw64/lib/giomm-2.4/include",
-                "C:/msys64/mingw64/lib/gdkmm-3.0/include",
-                "C:/msys64/mingw64/lib/pangomm-1.4/include",
-                "C:/msys64/mingw64/lib/gtkmm-3.0/include",
-                "C:/dev/freeglut-mingw-3.0.0/include"
-            ],
-            "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
-            ],
-            "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
-            "cStandard": "c11",
-            "cppStandard": "c++20",
-            "intelliSenseMode": "gcc-x64"
-        },
-        {
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
@@ -38,10 +13,9 @@
                 "/usr/lib/x86_64-linux-gnu/pangomm-1.4/include",
                 "/usr/lib/x86_64-linux-gnu/gtkmm-3.0/include"
             ],
-            "defines": [],
             "compilerPath": "/usr/bin/gcc",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++20",
+            "cStandard": "c17",
+            "cppStandard": "c++20",
             "intelliSenseMode": "gcc-x64"
         }
     ],

@@ -9,7 +9,6 @@ using namespace std;
 class Scene{
     public:
         Scene();
-        Scene(const unsigned int numberOfCubes);
 
         void render() const;
         void animate();
